@@ -355,9 +355,20 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
         return _swipe(CardSwiperDirection.bottom);
       case CardSwiperState.undo:
         return _undo();
+      case CardSwiperState.reInit:
+        return _reInit();
       default:
         return;
     }
+  }
+
+  void _reInit() {
+     setState(() {
+      _animationController.reset();
+      _cardAnimation.reset();
+      _swipeType = SwipeType.none;
+      _undoableIndex.state = widget.initialIndex;
+    });
   }
 
   void _animationListener() {
