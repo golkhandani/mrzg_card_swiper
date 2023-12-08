@@ -40,4 +40,9 @@ class CardSwiperController extends ChangeNotifier {
     state = CardSwiperState.undo;
     notifyListeners();
   }
+
+  void reInit() {
+    state = CardSwiperState.reInit;
+    notifyListeners();
+  }
 }
