@@ -4,7 +4,8 @@ enum CardSwiperState {
   swipeRight,
   swipeTop,
   swipeBottom,
-  undo
+  undo,
+  reInit,
 }
 
 enum CardSwiperDirection { none, left, right, top, bottom }
